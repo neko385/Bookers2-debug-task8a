@@ -1,3 +1,4 @@
+<center>
 <div class="title">
   <h2>
     <%= ("#{@another_entry.user.name}さんとのメッセージ") %>
@@ -6,19 +7,11 @@
 <% @messages.each do |m| %>
   <% if m.user_id == current_user.id %>
     <div class="mycomment">
-      <p>
-        <%= m.body %>
-      </p>
+      <p><%= m.body %></p>
     </div>
   <% else %>
-    <div class="fukidasi">
-      <div class="chatting">
-        <div class="says">
-          <p>
-            <%= m.body %>
-          </p>
-        </div>
-      </div>
+    <div class="chatting">
+      <p><%= m.body %></p>
     </div>
   <% end %>
 <% end %>
@@ -31,3 +24,4 @@
     </table>
   <% end %>
 </div>
+</center>
