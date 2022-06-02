@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
-
+  impressionist :action => [:show, :index]
 
   def show
     @book = Book.find(params[:id])
     @books = Book.new
     @book_comment = BookComment.new
+    impressionist(@book, nil, unique: [:user_id])
   end
 
   def index
@@ -54,4 +55,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title,:body)
   end
+
 end
