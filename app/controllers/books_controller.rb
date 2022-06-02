@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @books = Book.new
     @book_comment = BookComment.new
-    impressionist(@book, nil, unique: [:user_id])
+    impressionist(@book, nil)
   end
 
   def index
